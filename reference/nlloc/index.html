@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>NLLoc - NLL Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "NLLoc";
+    var mkdocs_page_input_path = "reference/nlloc.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> NLL Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Reference</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../vel2grid/">Vel2Grid</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../vel2grid3d/">Vel2Grid3D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../grid2time/">Grid2Time</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../time2eq/">Time2EQ</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">NLLoc</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#locsig">LOCSIG</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#loccom">LOCCOM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#locfiles">LOCFILES</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lochypout">LOCHYPOUT</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#locmeth">LOCMETH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#locsearch">LOCSEARCH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#locsrce">LOCSRCE</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">NLL Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Reference &raquo;</li>
+        
+      
+    
+    <li>NLLoc</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="nlloc">NLLoc</h1>
+<h2 id="parameters">Parameters</h2>
+<h3 id="locsig">LOCSIG</h3>
+<p>Identification of an individual, institution or other entity. Written in some output files.</p>
+<p>Syntax:</p>
+<pre><code>LOCSIG signature
+</code></pre>
+<h3 id="loccom">LOCCOM</h3>
+<p>Comment about location run. Written in some output files.</p>
+<p>Syntax:</p>
+<pre><code>LOCCOM comment
+</code></pre>
+<h3 id="locfiles">LOCFILES</h3>
+<p>Specifies the directory path and filename for the phase/observation files, and 
+file root names (no extension) for the input time grids and the output files. </p>
+<p>Syntax: </p>
+<pre><code>LOCFILES obsFiles obsFileType ttimeFileRoot outputFileRoot iSwapBytes
+</code></pre>
+<ul>
+<li><code>obsFiles</code>: full or relative path and name for phase/observations files.
+   Mulitple files may be specified with standard UNIX "wild-card" characters <code>*</code> and <code>?</code>.</li>
+<li><code>obsFileType</code>: format type for phase/observations files (see Phase File Formats).
+   Valid values are: <code>NLLOC_OBS</code> <code>HYPO71</code> <code>HYPOELLIPSE</code> <code>NEIC</code> <code>CSEM_ALERT</code>
+   <code>SIMULPS</code> <code>HYPOCENTER</code> <code>HYPODD</code> <code>SEISAN</code> <code>NORDIC</code> <code>NCSN_Y2K_5</code> <code>NCEDC_UCB</code>
+   <code>ETH_LOC</code> <code>RENASS_WWW</code> <code>RENASS_DEP</code> <code>INGV_BOLL</code> <code>INGV_BOLL_LOCAL</code> <code>INGV_ARCH</code></li>
+<li><code>ttimeFileRoot</code>: full or relative path and file root name (no extension) for input time grids
+   generated by program <code>Grid2Time</code>, <code>edu.sc.seis.TauP.TauP_Table_NLL</code>, or other software. </li>
+<li><code>outputFileRoot</code>: full or relative path and file root name (no extension) for output files.</li>
+<li><code>iSwapBytes</code>: flag to indicate if high and low bytes of input time grid files
+   should be swapped. Allows reading of travel-time grids from different computer
+   architecture platforms during <code>TRANS GLOBAL</code> mode location. <code>0</code> = no swap, <code>1</code> = swap
+   [default = <code>0</code>].</li>
+</ul>
+<h3 id="lochypout">LOCHYPOUT</h3>
+<p>Specifies the filetypes to be used for output.</p>
+<p>Syntax:</p>
+<pre><code>LOCHYPOUT fileType1 [fileType2 ...]
+</code></pre>
+<p>Valid file types are: <code>AVE_NLLOC_ALL</code> <code>SAVE_NLLOC_SUM</code> <code>NLL_FORMAT_VER_2</code>
+<code>FILENAME_DEC_SEC</code> <code>SAVE_NLLOC_EXPECTATION</code> <code>SAVE_NLLOC_OCTREE</code> <code>SAVE_FMAMP</code>
+<code>SAVE_HYPOELL_ALL</code> <code>SAVE_HYPOELL_SUM</code> <code>SAVE_HYPO71_ALL</code> <code>SAVE_HYPO71_SUM</code>
+<code>SAVE_HYPOINV_SUM</code> <code>SAVE_HYPOINVERSE_Y2000_ARC</code> <code>SAVE_NLLOC_OCTREE</code>
+[ default: <code>SAVE_NLLOC_ALL</code> <code>SAVE_HYPOINVERSE_Y2000_ARC</code>]</p>
+<ul>
+<li><code>SAVE_NLLOC_ALL</code>: save summary and event files of type <code>NLLoc</code> Hypocenter-Phase
+   file, Phase Statistics file, Scatter file and Confidence Level file.</li>
+<li><code>SAVE_NLLOC_SUM</code>: save summary file only of type <code>NLLoc</code> Hypocenter-Phase file.</li>
+<li><code>NLL_FORMAT_VER_2</code>: save <code>NLLoc</code> Hypocenter-Phase files in new format (WARNING:
+   this new output format is currently under development and subject to modification),
+   <code>NLLoc</code> Hypocenter-Phase file, Phase Statistics file, Scatter file and Confidence Level file.</li>
+<li><code>FILENAME_DEC_SEC</code>: output file named with 2 decimal second precision instead of
+   default integer second precision. Avoids overwriting of output files for
+   multiple events or multiple locations with earliest observation time in same second.</li>
+<li><code>SAVE_NLLOC_EXPECTATION</code>: hypocenter, location statistics and phase statistics
+   results are based on expectation hypocenter instead of maximum likelihood
+   hypocenter (default) <code>NLLoc</code> Hypocenter-Phase file.</li>
+<li><code>SAVE_NLLOC_OCTREE</code>: saving of oct-tree structure to disk file when
+  <code>LOCSEARCH OCT</code> is used.</li>
+<li><code>SAVE_FMAMP</code>: saving of <code>fmamp</code> hypocenter-phase file for input to <code>fmamp</code>,
+   probabilistic first-motion mechanism program.</li>
+<li><code>SAVE_HYPOELL_ALL</code>: save summary and event files of type Quasi-<code>HYPOELLIPSE</code> file.</li>
+<li><code>SAVE_HYPOELL_SUM</code>: save summary file only of type Quasi-<code>HYPOELLIPSE</code> file.</li>
+<li><code>SAVE_HYPO71_ALL</code>: save summary and event files of type <code>HYPO71</code> Hypocenter/Station file.</li>
+<li><code>SAVE_HYPO71_SUM</code>: save summary file only of type <code>HYPO71</code> Hypocenter/Station file.</li>
+<li><code>SAVE_HYPOINV_SUM</code>: save summary file only of type <code>HYPOINVERSE</code> Archive file.</li>
+<li><code>SAVE_HYPOINVERSE_Y2000_ARC</code>: save summary file only of type <code>HYPOINVERSE</code> Y2000 Archive file.</li>
+</ul>
+<p>The <code>HYPOINVERSE</code> Archive format serves as input to the program <code>FPFIT</code>
+(Reasenberg et al., 1985) for grid-search determination of focal mechanism solutions.</p>
+<h3 id="locmeth">LOCMETH</h3>
+<p>Specifies the location method (algorithm) and method parameters.</p>
+<p>Syntax:</p>
+<pre><code>LOCMETH method maxDistStaGrid minNumberPhases maxNumberPhases minNumberSphases VpVsRatio maxNum3DGridMemory minDistStaGrid iRejectDuplicateArrivals
+</code></pre>
+<ul>
+<li>
+<p><code>method</code>: location method/algorithm. Possible values are</p>
+<ul>
+<li><code>GAU_ANALYTIC</code>: the inversion approach of Tarantola and Valette (1982) with
+   L2-RMS likelihood function.</li>
+<li><code>EDT</code>: Equal Differential Time likelihood function cast into the inversion
+   approach of Tarantola and Valette (1982)</li>
+<li><code>EDT_OT_WT</code>: Weights EDT-sum probabilities by the variance of origin-time
+   estimates over all pairs of readings. This reduces the probability (PDF values)
+   at points with inconsistent OT estimates, and leads to more compact location PDF's.</li>
+<li><code>EDT_OT_WT_ML</code>: version of <code>EDT_OT_WT</code> with EDT origin-time weighting applied
+   using a grid-search, maximum-likelihood estimate of the origin time. Less
+   efficient than <code>EDT_OT_WT</code> which uses simple statistical estimate of the origin time.</li>
+</ul>
+</li>
+<li>
+<p><code>maxDistStaGrid</code>: maximum distance in km between a station and the center of
+   the initial search grid; phases from stations beyond this distance will not
+   be used for event location.</p>
+</li>
+<li>
+<p><code>minNumberPhases</code>: minimum number of phases that must be accepted before event
+   will be located.</p>
+</li>
+<li>
+<p><code>maxNumberPhases</code>: maximum number of accepted phases that will be used for event
+   location; only the first <code>maxNumberPhases</code> read from the phase/observations file
+   are used for location.</p>
+</li>
+<li>
+<p><code>minNumberSphases</code>: minimum number of S phases that must be accepted before
+   event will be located.</p>
+</li>
+<li>
+<p><code>VpVsRatio</code>: P velocity to S velocity ratio. If <code>VpVsRatio</code> &gt; 0.0 then only P
+   phase travel-times grids are read and <code>VpVsRatio</code> is used to calculate S phase
+   travel-times. If <code>VpVsRatio</code> &lt; 0.0 then S phase travel-times grids are used.</p>
+</li>
+<li>
+<p><code>maxNum3DGridMemory</code>: maximum number of 3D travel-time grids to attempt to read
+   into memory for Metropolis-Gibbs search. This helps to avoid time-consuming memory
+   swapping that occurs if the total size of grids read exceeds the real memory
+   of the computer. 3D grids not in memory are read directly from disk. If
+   <code>maxNum3DGridMemory</code> &lt; 0 then NLLoc attempts to read all grids into memory.</p>
+</li>
+<li>
+<p><code>minDistStaGrid</code>: minimum distance in km between a station and the center of
+   the initial search grid; phases from stations closer than this distance will
+   not be used for event location.</p>
+</li>
+<li>
+<p><code>iRejectDuplicateArrivals</code>: flag indicating if duplicate arrivals used for
+   location (1=reject, 0=use if <script type="math/tex"> {\Delta t} < {\sigma / 2} </script>). Duplicate arrivals have
+   same station label and phase name.</p>
+</li>
+</ul>
+<p>Notes:</p>
+<ol>
+<li>See <code>NLLoc</code> Program Inversion Approach for more information on the <code>GAU_ANALYTIC</code> method.</li>
+<li>See <code>NLLoc</code> Program EDT likelihood function for more information on the <code>EDT</code> method.</li>
+<li>Phases that are not used for location are written to output files and are used
+   for calculating average residuals.</li>
+</ol>
+<h3 id="locsearch">LOCSEARCH</h3>
+<p>Specifies the search type and search parameters. The possible search types are
+<code>GRID</code> (grid search), <code>MET</code> (Metropolis), and <code>OCT</code> (Octtree). </p>
+<p>Syntax:</p>
+<pre><code>LOCSEARCH GRID numSamplesDraw
+
+LOCSEARCH MET numSamples numLearn numEquil numBeginSave numSkip stepInit stepMin stepFact probMin
+
+LOCSEARCH OCT initNumCells_x initNumCells_y initNumCells_z minNodeSize maxNumNodes numScatter useStationsDensity stopOnMinNodeSize
+</code></pre>
+<p>Parameters for <code>GRID</code> method:</p>
+<ul>
+<li><code>numSamplesDraw</code>: specifies the number of scatter samples to draw from each
+   saved PDF grid ( i.e. grid with gridType = PROB_DENSITY and saveFlag = SAVE )
+   No samples are drawn if saveFlag &lt; 0. </li>
+</ul>
+<p>Parameters for <code>MET</code> method:</p>
+<ul>
+<li><code>numSamples</code>: total number of accepted samples to obtain.</li>
+<li><code>numLearn</code>: number of accepted samples for learning stage of search.</li>
+<li><code>numEquil</code>: number of accepted samples for equilibration stage of search.</li>
+<li><code>numBeginSave</code>: number of accepted samples after which to begin saving stage
+   of search. Denotes end of equilibration stage.</li>
+<li><code>numSkip</code>: number of accepted samples to skip between saves. <code>numSkip</code> = 1
+   saves every accepted sample.</li>
+<li><code>stepInit</code>: initial step size in km for the learning stage ( stepInit &lt; 0.0
+   gives automatic step size selection. If the search takes too long, the initial
+   step size may be too large; this may be the case if the search region is very
+   large relative to the volume of the high confidence region for the locations.) </li>
+<li><code>stepMin</code>: minimum step size allowed during any search stage. This parameter
+   should not be critical, set it to a low value.</li>
+<li><code>stepFact</code>: step factor for scaling step size during equilibration stage. Try
+   a value of 8.0 to start.</li>
+<li><code>probMin</code>: minimum value of the maximum probability (likelihood) that must be
+   found by the end of learning stage, if this value is not reached the search
+   is aborted. This parameters allows the filtering of locations outside of the
+   search grid and locations with large residuals.</li>
+</ul>
+<p>Parameters for <code>OCT</code> method:</p>
+<ul>
+<li><code>initNumCells_x</code>, <code>initNumCells_y</code>, <code>initNumCells_z</code>: initial number of octtree
+   cells in the x, y, and z directions.</li>
+<li><code>minNodeSize</code>: smallest octtree node side length to process. The octree search
+   is terminated after a node with a side smaller than this length is generated.</li>
+<li><code>maxNumNodes</code>: total number of nodes to process.</li>
+<li><code>numScatter</code>: the number of scatter samples to draw from the octtree results.</li>
+<li><code>useStationsDensity</code>:  <code>1</code> = weights oct-tree cell probability values used for
+   subdivide decision in proportion to number of stations in oct-tree cell.
+   Gives higher search priority to cells containing stations, stablises
+   convergence to local events when global search used with dense cluster of local stations.
+   <code>0</code> = do not use weight [default = <code>0</code>].</li>
+<li><code>stopOnMinNodeSize</code>: <code>1</code> = stop search when first <code>minNodeSize</code> reached,
+   <code>0</code> = stop subdividing a given cell when <code>minNodeSize</code> reached [default = <code>1</code>].</li>
+</ul>
+<p>Notes:</p>
+<ol>
+<li>See NLLoc Program Oct-Tree Algorithm, Grid-Search Algorithm and Metropolis
+   Sampling Algorithm for more information.</li>
+<li>Samples are saved to a binary, event Scatter file (see Scatter file formats).
+   For the grid-search, because the samples are drawn stochastically, the number
+   of samples actually obtained my differ slightly from the requested number.</li>
+<li>If a large number of samples are saved, the spatial density of samples will
+   be proportional to the PDF.</li>
+<li>The scatter samples are useful for plotting the PDF as a transparent "cloud" and for relatively compact disk storage of the PDF.</li>
+</ol>
+<h3 id="locsrce">LOCSRCE</h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../time2eq/" class="btn btn-neutral" title="Time2EQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../time2eq/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
