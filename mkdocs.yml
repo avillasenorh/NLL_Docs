@@ -1,5 +1,13 @@
 site_name: NLL Documentation
 
+nav:
+
+    - Reference:
+        - Vel2Grid: 'reference/vel2grid.md'
+        - Vel2Grid3D: 'reference/vel2grid3d.md'
+        - Grid2Time: 'reference/grid2time.md'
+        - Time2EQ: 'reference/time2eq.md'
+        - NLLoc: 'reference/nlloc.md'
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
