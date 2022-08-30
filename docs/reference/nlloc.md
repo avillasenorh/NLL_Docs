@@ -2,6 +2,67 @@
 
 ## Parameters
 
+This section describes the parameters specific to the location code `NLLoc`.
+These parameters can be grouped in the following categories:
+
+Comments, IDs
+
+- `LOCSIG`: Identification of individual or agency running the location code.
+
+- `LOCCOM`: Comment about location run (event, sequence, tests, ...).
+
+Location method
+
+- `LOCGRID`: defines the grid to perform the search (initial and optionally nested grids).
+
+- `LOCSEARCH`: search method to use (exhaustive grid search, Metropolis, Octtree).
+
+- `LOCMETH:` location method to use (Tarantola and Valette, EDT, ...).
+
+Stations, phases and travel times
+
+- `LOCPHASEID`: maps phase names (e.g., Pg, pg, Sn, ...) into standard names P and S.
+
+- `LOCALIAS`: sets aliases for stations with same location but different location codes.
+
+- `LOCEXCLUDE`: exclude arrival times for some stations and phases.
+
+- `LOCDELAY`: define P and S station corrections.
+
+- `LOCELEVCORR`: defines Vp and Vs for calculating elevation correction.
+
+- `LOCSTAWT`: defines distance for station distribution weighting.
+
+- `LOCQUAL2ERR`: maps HYPO71 weights (0, 1, 2, 3, 4) to time uncertainties. 
+
+- `LOCSRCE`: defines stations that use default travel time grid.
+
+- `LOCGAU`: sets parameters for Gaussian covariances.
+
+- `LOCGAU2`: sets parameters for travel-time dependent model errors.
+
+Data and output files
+
+- `LOCFILES`:
+
+- `LOCHYPOUT`:
+
+Output information
+
+- `LOCPHSTAT`:
+
+- `LOCANGLES`:
+
+- `LOCMAG`:
+
+- `LOCCMP`:
+
+Miscellaneous
+
+- `LOCTOPO_SURFACE`:
+
+LOCSRCE -   LOCGAU - LOCGAU2
+
 ### LOCSIG
 
 Identification of an individual, institution or other entity. Written in some output files.
